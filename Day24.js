@@ -9,10 +9,23 @@ function register(event) {
     var password = document.getElementById("USERPASSWORD").value;
     console.log(password, "password")
 
-    document.getElementById("USERNAME").value = ""; 
-    document.getElementById("USERNUMBER").value = "";
-    document.getElementById("USEREMAIL").value = "";
-    document.getElementById("USERPASSWORD").value = "";
+    const userdata= {
+        username: name,
+        useremail: email,
+        userpassword: password,
+        usernumber: number
+    }
+
+    localStorage.setItem("studentslist", JSON.stringify(userdata))
+
+    document.getElementById("userName").value = ""; // assigning
+    document.getElementById("userNumber").value = "";
+    document.getElementById("userEmail").value = "";
+    document.getElementById("userPassword").value = "";
 
     alert("Resgitered..")
 }
+
+
+
+
