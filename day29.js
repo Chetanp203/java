@@ -32,15 +32,41 @@
 // }
 // return answer;
 //  }
-nums = [0,0,2,4,1,2]
-var singleNumber = function(nums) {
+
+
+// nums = [0,0,2,4,1,2]
+// var singleNumber = function(nums) {
+//     let n = nums.length;
+//     let c = 0;
+//     for (let i = 0; i < n; i++) {
+//     //    console.log(nums[i])
+//         c = c ^ nums[i];
+//     }
+//     return c; 
+// }
+// var result = singleNumber(nums);
+// console.log(result)
+
+
+
+nums = [4,3,2,7,8,2,3,1]
+
+
+var findDisappearedNumbers = function(nums) {
     let n = nums.length;
-    let c = 0;
-    for (let i = 0; i < n; i++) {
-    //    console.log(nums[i])
-        c = c ^ nums[i];
-    }
-    return c; 
-}
-var result = singleNumber(nums);
-console.log(result)
+     let ans = new Set(nums);
+     let array = [];
+     for (let i = 1; i <= n; i++) {
+         if (!ans.has(i)) {
+            array.push(i);
+         }
+     }
+     return array;
+     
+ }
+     let res = findDisappearedNumbers(nums)
+     console.log(res)
+
+
+
+
