@@ -39,26 +39,45 @@
 
 // Q no 747
 
-nums = [3,6,1,0]
-index=0;
-count=0;
-let max = nums[0];
-var largestNumber =function(nums){
-    for(i=1; i< nums.length;i++){
-        if(nums[i]>max){
-            max=nums[i];
-            index=i;
-        }
-    }
-    for(i=0; i<nums.length;i++){
-        if(i!=index && max>=2*nums[i]){
-            count++;
-        }
-    }
-    if(count==nums.length-1)
-    return index;
-    else
-    return -1;
+// nums = [3,6,1,0]
+// index=0;
+// count=0;
+// let max = nums[0];
+// var largestNumber =function(nums){
+//     for(i=1; i< nums.length;i++){
+//         if(nums[i]>max){
+//             max=nums[i];
+//             index=i;
+//         }
+//     }
+//     for(i=0; i<nums.length;i++){
+//         if(i!=index && max>=2*nums[i]){
+//             count++;
+//         }
+//     }
+//     if(count==nums.length-1)
+//     return index;
+//     else
+//     return -1;
+// }
+// let res = largestNumber(nums)
+// console.log(res);
+
+
+// Q no 605
+
+flowerbed = [1,0,0,0,1];
+var canPlaceFlowers =function(flowerbed,n){
+ n = 1;
+ let i=0;
+ while(i<flowerbed.length && n !== 0 ) {
+      if( flowerbed[i] === 0 && flowerbed[i-1] !== 1 && flowerbed[i+1] !==1){
+        n--;
+        i++;
+      }
+      i++
+ }
+ return n===0;
 }
-let res = largestNumber(nums)
+let res = canPlaceFlowers(flowerbed)
 console.log(res);
